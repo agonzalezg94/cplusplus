@@ -29,10 +29,29 @@ int main (void){
     }
 
     std::cout << "Muestra el tamanio del vector \n" << endl;
-    std::cout << myVector.size();
+    std::cout << myVector.size() << "\n" << endl;;
+
+    std::cout << "Muestra el vector \n" << endl;
+    for (i=0; i < myVector.size(); i++){
+        std::cout << myVector[i] << "\n" << endl;
+    }
+
+    int iErase;
+    std::cout << "Introduce cuantos valores quieres eliminar: " << endl;
+    std::cin >> iErase;
+    if (iErase < myVector.size()) std::cout << "Valor valido \n" << endl;
+    std::cout << "Vamos a eliminar los valores del vector" << endl;
+
+    for (i=0; i < iErase; i++)
+        myVector.pop_back();
+
+    std::cout << "Muestra el tamanio del vector \n" << endl;
+    std::cout << myVector.size() << "\n" << endl;
+    
 
     std::cout << "Muestra el vector" << endl;
-    for (i=0; i < myVector.size(); i++){
+    for (i = 0; i < myVector.size(); i++)
+    {
         std::cout << myVector[i] << "\n" << endl;
     }
 
