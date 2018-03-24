@@ -42,5 +42,5 @@ void Person::setNombre(std::string argSNombre)
 
 void Person::saluda()
 {
-    std::cout << "Hola, soy" << this->sNombre << "y tengo " << this->iEdad << "anios" << endl;
+    std::cout << "Hola, soy" << this->sNombre << " y tengo " << this->iEdad << " anios" << endl;
 }
