@@ -10,6 +10,8 @@
             "args":[
                 "-g",
                 "src/main.cpp",
+                "src/Person.cpp",
+                "lib/Person.h",
                 "-o",
                 "bin/vector"
             ],

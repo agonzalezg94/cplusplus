@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "../lib/Person.h"
 
 using namespace std;
 
@@ -11,8 +12,40 @@ int mediaAritmetica(std::vector<int> aVector);
 
 int main(void)
 {
+    int N_PERSONAS,i,edad;
+    std::string nombre;
+    std::cout << "Cuantas personas hay?: " << endl;
+    std::cin >> N_PERSONAS;
+    Person *oPerson;
+    oPerson = new Person(23, "Pedro");
+    oPerson->saluda();
+    delete oPerson;
+    //!< Declaracion de tres personas
+  /*  for (i = 0; i < N_PERSONAS; i++)
+    {
+        Person *oPerson[i];
+    }
+    for (i = 0; i < N_PERSONAS; i++)
+    {
+        std::cout << "Edad persona" << i << ": " << endl;
+        std::cin >> edad;
+        std::cout << "Nombre persona" << i << ": " << endl;
+        std::cin >> nombre;
+        oPerson[i] = new Person(edad, nombre);
+    }*/
 
-    std::vector<int> myVector(VECTOR_SIZE);
+    //!< Presentacion de las personas
+   /* for (i = 0; i < N_PERSONAS; i++)
+    {
+        oPerson[i]->saluda();
+    }
+
+    //!< Eliminacion de los objetos
+    for (i = 0; i < N_PERSONAS; i++)
+    {
+        delete oPerson[i];
+    }*/
+    /*   std::vector<int> myVector(VECTOR_SIZE);
     int i,limit, nuevoValor;
     std::cout << "Introduce el valor limite: \t" << endl;
     std::cin >> limit;
@@ -62,7 +95,7 @@ int main(void)
 
     //!< \fn mediaAritmetica: calcula la media de los valores del vector
     std::cout << mediaAritmetica(myVector) << endl;
-
+*/
     system("pause");
 
     return 0;

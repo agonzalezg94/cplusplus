@@ -9,7 +9,7 @@ class Person
 {
     private:
         int iEdad;
-        std::string sNombre[10];
+        std::string sNombre;
     public:
         
         //!< Constructor por defecto
@@ -24,4 +24,5 @@ class Person
         int getEdad();
         void setNombre(std::string argSNombre);
         void setEdad(int argiEdad);
-}
+        void saluda();
+};

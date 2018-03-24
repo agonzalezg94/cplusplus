@@ -1,5 +1,5 @@
 #include <iostream>
-#include "lib/Person.h"
+#include "../lib/Person.h"
 
 Person::Person()
 {
@@ -17,7 +17,7 @@ Person::Person(int iaEdad, std::string saNombre)
 
 Person::~Person()
 {
-
+    std::cout << "Adios, soy " << this->sNombre << "y me voy" << endl;
 }
 
 int Person::getEdad()
@@ -38,4 +38,9 @@ void Person::setEdad(int argiEdad)
 void Person::setNombre(std::string argSNombre)
 {
     this->sNombre = argSNombre;
+}
+
+void Person::saluda()
+{
+    std::cout << "Hola, soy" << this->sNombre << "y tengo " << this->iEdad << "anios" << endl;
 }
