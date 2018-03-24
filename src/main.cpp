@@ -36,21 +36,25 @@ int main(void)
             oPerson[i] = new Person(edad, nombre);
         }
 
-        int aux;
-        //!< Inicializa el resto de componentes
-        for (i = 0; i < (MAX_PERSON - N_PERSONAS); i++)
+        int masPersonas;
+        std::cout << "Cuantas personas mas quieres declarar?: " << endl; 
+        std::cin >> masPersonas;
+        oPerson.reserve(N_PERSONAS+masPersonas);
+        for (i=N_PERSONAS; i< (N_PERSONAS + masPersonas); i++)
         {
-            aux = i + N_PERSONAS;
-            oPerson[aux] = nullptr;
-            cout << "Rellenando con null el objeto " << aux+1 << endl;
+            std::cout << "Introduzca edad de la persona " << i + 1 << " :" << endl;
+            std::cin >> edad;
+            std::cout << "Introduzca el nombre de la persona " << i + 1 << " :" << endl;
+            std::cin >> nombre;
+            oPerson.push_back(new Person(edad, nombre));
         }
 
         //!< Saluda cada una de las personas
-        for (i = 0; i < N_PERSONAS; i++)
+        for (i = 0; i < (N_PERSONAS + masPersonas); i++)
             oPerson[i]->saluda();
 
         //!< Destruye los objetos
-        for (i = 0; i < MAX_PERSON; i++)
+        for (i = 0; i < (MAX_PERSON + masPersonas); i++)
             delete oPerson[i];
     }
     else
