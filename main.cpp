@@ -7,19 +7,22 @@ using namespace std;
 /**!
  *  \brief Ejemplo para practicar con vectores
  */
-int main (void){
+int mediaAritmetica(std::vector<int> aVector);
+
+int main(void)
+{
 
     std::vector<int> myVector(VECTOR_SIZE);
     int i,limit, nuevoValor;
-    std::cout << "Introduce el valor limite: " << endl;
+    std::cout << "Introduce el valor limite: \t" << endl;
     std::cin >> limit;
 
     for (i=0; i<VECTOR_SIZE; i++){
-        std::cout << "Rellena los valores iniciales del vector" << endl;
+        std::cout << "Rellena los valores iniciales del vector \n" << endl;
         std::cin >> myVector[i];
     } 
     std::cout << "Muestra el tamanio del vector \n" << endl;
-    std::cout << myVector.size();
+    std::cout << myVector.size() << endl;
 
     for (i = 0; i < limit; i++)
     {
@@ -55,7 +58,21 @@ int main (void){
         std::cout << myVector[i] << "\n" << endl;
     }
 
+    std::cout << "Realiza la media aritmetica de los valores del vector \n" << endl;
+
+    //!< \fn mediaAritmetica: calcula la media de los valores del vector
+    std::cout << mediaAritmetica(myVector) << endl;
+
     system("pause");
 
     return 0;
+}
+
+int mediaAritmetica(std::vector<int> aVector){
+    //!< Calcula la media
+    int iSum,i;
+    iSum=0;
+    for (i=0;i<aVector.size();i++)
+        iSum = iSum + aVector[i];
+    return iSum/i;
 }
