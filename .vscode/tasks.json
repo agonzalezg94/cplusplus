@@ -9,7 +9,7 @@
             "command": "g++",
             "args":[
                 "-g",
-                "main.cpp",
+                "src/main.cpp",
                 "-o",
                 "bin/vector"
             ],
