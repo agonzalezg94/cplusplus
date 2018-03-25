@@ -17,7 +17,7 @@ Person::Person(int iaEdad, std::string saNombre)
 
 Person::~Person()
 {
-    
+
 }
 
 int Person::getEdad()
