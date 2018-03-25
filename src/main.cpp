@@ -39,23 +39,30 @@ int main(void)
         int masPersonas;
         std::cout << "Cuantas personas mas quieres declarar?: " << endl; 
         std::cin >> masPersonas;
+        //!< Reserva el espacio necesario de nuevo con .reserve
         oPerson.reserve(N_PERSONAS+masPersonas);
         for (i=N_PERSONAS; i< (N_PERSONAS + masPersonas); i++)
         {
-            std::cout << "Introduzca edad de la persona " << i + 1 << " :" << endl;
-            std::cin >> edad;
-            std::cout << "Introduzca el nombre de la persona " << i + 1 << " :" << endl;
+            std::cout << "Introduzca edad de la persona " << i + 1 << " :" << endl;         //!< Introduce por consola la edad de la persona
+            std::cin >> edad;   
+            std::cout << "Introduzca el nombre de la persona " << i + 1 << " :" << endl;    //!< Introduce por consola el nombre de la persona
             std::cin >> nombre;
-            oPerson.push_back(new Person(edad, nombre));
+            oPerson.push_back(new Person(edad, nombre));                                    //!< Introduce en el ultimo lugar un nuevo puntero a objeto person
         }
 
         //!< Saluda cada una de las personas
-        for (i = 0; i < (N_PERSONAS + masPersonas); i++)
+        for (i = 0; i < (N_PERSONAS + masPersonas); i++)                                    //!< Utiliza el metodo saluda para mostrar el saludo de cada persona
             oPerson[i]->saluda();
 
         //!< Destruye los objetos
-        for (i = 0; i < (MAX_PERSON + masPersonas); i++)
+        for (i = 0; i < (MAX_PERSON + masPersonas); i++)                                    //!< Borra todas las personas
             delete oPerson[i];
+        
+        //!< Por ultimo borra el contenedor para liberar memoria
+        /**!    Delete[] es usado para borrar tipos array
+         *      delete sin [] es para borrar punteros individuales
+         */
+        delete[] oPerson;                                           
     }
     else
     {
