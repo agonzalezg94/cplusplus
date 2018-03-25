@@ -2,12 +2,14 @@
 
 /**!    \class Person
  *          \brief  Describe la clase person. Define a una persona
+ *          Dicha clase pasara a ser abstracta de forma que no tendra implementacion directa
+ *          sino que las implementaciones se harána través de las clases derivadas
  */
 using namespace std;
 
 class Person
 {
-    private:
+    protected:
         int iEdad;
         std::string sNombre;
     public:
@@ -24,5 +26,5 @@ class Person
         int getEdad();
         void setNombre(std::string argSNombre);
         void setEdad(int argiEdad);
-        void saluda();
+        virtual void saluda() = 0;                  //!< Esto indica que el metodo es virtual puro
 };
