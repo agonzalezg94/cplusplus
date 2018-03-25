@@ -17,7 +17,7 @@ Person::Person(int iaEdad, std::string saNombre)
 
 Person::~Person()
 {
-    std::cout << "Adios, soy " << this->sNombre << "y me voy" << endl;
+    
 }
 
 int Person::getEdad()

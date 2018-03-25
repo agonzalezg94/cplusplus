@@ -1,3 +1,5 @@
+#ifndef PERSON_H
+#define PERSON_H
 #include <iostream>
 
 /**!    \class Person
@@ -30,3 +32,4 @@ class Person
          */
         virtual void saluda() = 0;                  //!< Esto indica que el metodo es virtual puro
 };
+#endif //PERSON_H

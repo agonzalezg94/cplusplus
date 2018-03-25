@@ -25,16 +25,18 @@ int main(void)
     {
         //!< Declaracion del vector de punteros a objetos persona
         std::vector<Student *> oStudent; //!< Contenedor de estudiantes
+        //!< Reserva del espacion
+        /**! Con .reserve() reservamos el espacion en memoria suficiente para el argumento que le damos de esta forma nos aseguramos que habrá espacio suficiente
+         *      Esto no inicializa el vector. Reserve no afecta al tamanio del vector, simplemente prepara
+         *      a la memoria para este espacio reservado
+         */
+        oStudent.reserve(MAX_ALUMNOS);
         //!< Construccion del profesor
         std::cout << "Introduce el nombre del profesor: " << endl;
         std::cin >> nombre;
         Teacher* oTeacher=new Teacher(34,nombre);                  //!< Declaracion del profesor 
 
-        //!< Reserva del espacion
-        /**! Con .reserve() reservamos el espacion en memoria suficiente para el argumento que le damos de esta forma nos aseguramos que habrá espacio suficiente
-         *      Esto no inicializa el vector. 
-         */
-        oPerson.reserve(MAX_ALUMNOS);
+
         //!< Construccion de los alumnos
         for (i = 0; i < N_ALUMNOS; i++)
         {

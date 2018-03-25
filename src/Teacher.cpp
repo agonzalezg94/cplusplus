@@ -2,28 +2,28 @@
 #include "../lib/Teacher.h"
 #include "../lib/Person.h"
 
-Teacher::Teacher()
-    : Person(int iaEdad, std::string saNombre)
+/*Teacher::Teacher(int iaEdad, std::string saNombre)
+    : Person(iaEdad, saNombre)
 {
     std::cout << "Hola, soy el profesor" << endl;
     this->sNombre = saNombre;
     this->iEdad = iaEdad;
 }
 
-Teacher::Teacher(std::string saNombre)
+Teacher::Teacher()
     : Person()
 {
-    this->sNombre = saNombre;
+    this->sNombre = "Pepito";
     this->iEdad = 34;
     std::cout << "Hola, soy el profesor y me llamo " << this->sNombre << " y tengo " << this->iEdad << " anios" << endl;
 }
-
+*/
 Teacher::~Teacher()
 {
     std::cout << "Adios, soy profesor y me voy" << endl;
 }
 
-virtual void Teacher::saluda()
+void Teacher::saluda()
 {
     std::cout << "Buenas, soy alumno, me llamo " << this->sNombre << " y tengo " << this->iEdad << " anios "<< endl;
 }
