@@ -39,7 +39,10 @@ int main(void)
         int masPersonas;
         std::cout << "Cuantas personas mas quieres declarar?: " << endl; 
         std::cin >> masPersonas;
-        //!< Reserva el espacio necesario de nuevo con .reserve
+        //!< Para reasignar espacio al vector es necesario usar el metodo .resize()
+        /**!    myVector.resize();
+         *      \brief  
+         */
         oPerson.reserve(N_PERSONAS+masPersonas);
         for (i=N_PERSONAS; i< (N_PERSONAS + masPersonas); i++)
         {
