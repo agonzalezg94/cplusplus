@@ -11,7 +11,8 @@
 Teacher::Teacher(int iaEdad, std::string saNombre)
     : Person(iaEdad, saNombre)
 {
-    std::cout << "Hola, soy el profesor" << endl;
+    std::cout << "Hola, soy el profesor. Me llamo " << this->sNombre << " y tengo " << this->iEdad
+    << " anios" << endl;
     this->sNombre = saNombre;
     this->iEdad = iaEdad;
 }
@@ -35,4 +36,20 @@ Teacher::~Teacher()
 void Teacher::saluda()
 {
     std::cout << "Buenas, soy profesor, me llamo " << this->sNombre << " y tengo " << this->iEdad << " anios "<< endl;
+}
+
+/**! Paso por referencia. Se pasa el contenedor de punteros a objetos Student por referencia,
+ * es decir, cualquier cambio aplicado dentro de la funcion a este contenedor, tendra efecto
+ * en el contenedor externo
+ */
+void Teacher::expulsar(int nAlumnos, std::vector<Student*> &orStudents)
+{
+    int i;
+    std::cout << "Soy el profesor " << this->sNombre << " y voy a expulsar de mi  clase a"
+    << nAlumnos << " alumnos" << endl;
+
+    for (i=0; i<nAlumnos; i++)
+        orStudents.pop_back();
+
+    std::cout << "Profesor: bueno, ahora en la clase hay: " << orStudents.size() << " alumnos" << endl;
 }

@@ -75,6 +75,10 @@ int main(void)
         //!< Saluda el profesor
         oTeacher->saluda();
 
+        //!< Expulsa a un alumno
+        oTeacher->expulsar(1,oStudent);
+
+        std::cout << "Main: ahora hay " << oStudent.size() << " alumnos" << endl;
         //!< Destruye los objetos
         for (i = 0; i < oStudent.size(); i++)                                    //!< Borra todas las personas
             delete oStudent[i];
