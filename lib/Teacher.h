@@ -14,13 +14,13 @@ class Teacher : public Person
     Teacher();
 
     //!< Constructor definido por el nombre
-    Teacher(std::string saNombre);
+    Teacher(int iaEdad, std::string saNombre);
 
     //!< Destructor de la clase
-    ~Teacher();
+    virtual ~Teacher();
 
     //!< Metodos
-    void saluda();
+    virtual void saluda();
 
 
 };

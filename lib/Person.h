@@ -20,7 +20,7 @@ class Person
         Person(int iaEdad, std::string saNombre);
 
         //!< Destructor
-        ~Person();
+        virtual ~Person();
 
         std::string getNombre();
         int getEdad();

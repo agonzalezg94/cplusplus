@@ -8,6 +8,10 @@ class Student : public Person
   protected:
     //!< Atributos publicos
   public:
+
+  Student();
+  Student(int iaEdad, std::string saNombre);
+  virtual ~Student();
     //!< Metodos
-    void saluda();
+   virtual void saluda();
 };

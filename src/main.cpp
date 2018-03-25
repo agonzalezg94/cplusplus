@@ -28,7 +28,7 @@ int main(void)
         //!< Construccion del profesor
         std::cout << "Introduce el nombre del profesor: " << endl;
         std::cin >> nombre;
-        Teacher* oTeacher=new Teacher(nombre);                  //!< Declaracion del profesor 
+        Teacher* oTeacher=new Teacher(34,nombre);                  //!< Declaracion del profesor 
 
         //!< Reserva del espacion
         /**! Con .reserve() reservamos el espacion en memoria suficiente para el argumento que le damos de esta forma nos aseguramos que habrá espacio suficiente
