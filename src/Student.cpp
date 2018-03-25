@@ -1,6 +1,6 @@
 
-
 #include "../lib/Student.h"
+#include "../lib/Person.h"
 
 Student::Student()
 {

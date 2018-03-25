@@ -26,5 +26,7 @@ class Person
         int getEdad();
         void setNombre(std::string argSNombre);
         void setEdad(int argiEdad);
+        /**!    Una clase virtual pura debe ser declara en cada una de las clases derivadas sino dara error
+         */
         virtual void saluda() = 0;                  //!< Esto indica que el metodo es virtual puro
 };

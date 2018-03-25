@@ -11,7 +11,8 @@
                 "-g",
                 "src/main.cpp",
                 "src/Person.cpp",
-                "lib/Person.h",
+                "src/Student.cpp",
+                "src/Teacher.cpp",
                 "-o",
                 "bin/vector"
             ],
