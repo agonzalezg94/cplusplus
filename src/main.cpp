@@ -25,6 +25,9 @@ int main(void)
         std::vector<Person *> oPerson;
 
         //!< Reserva del espacion
+        /**! Con .reserve() reservamos el espacion en memoria suficiente para el argumento que le damos de esta forma nos aseguramos que habrá espacio suficiente
+         *      Esto no inicializa el vector. 
+         */
         oPerson.reserve(MAX_PERSON);
         //!< Construccion de los objetos
         for (i = 0; i < N_PERSONAS; i++)
@@ -33,7 +36,7 @@ int main(void)
             std::cin >> edad;
             std::cout << "Introduzca el nombre de la persona " << i+1 << " :" << endl;
             std::cin >> nombre;
-            oPerson[i] = new Person(edad, nombre);
+            oPerson.push_back(new Person(edad, nombre));
         }
 
         int masPersonas;
@@ -41,9 +44,13 @@ int main(void)
         std::cin >> masPersonas;
         //!< Para reasignar espacio al vector es necesario usar el metodo .resize()
         /**!    myVector.resize();
-         *      \brief  
+         *      \brief  resize es usado para redimensionar el tamaño del vector. De forma que si en este punto el vector de objetos persona tiene
+         *      una dimension de 4 cuando nosotros habiamos reservado espacio para 10 podemos redimensionar su espacio a 4.
+         *      -Si se usa resize(arg1,arg2) con arg 1 marcamos el nuevo tamaño del vector, en arg2 el valor de inicializacion en caso de quesea un tama
+         *          ño mayor. Si fuera un tamañano menor se eliminan las componentes correspondientes.
          */
-        oPerson.reserve(N_PERSONAS+masPersonas);
+        //oPerson.resize(N_PERSONAS+masPersonas, nullptr);                                    //!< Redimensionamos el vector y lo inicializamos con punteros nulos
+        std::cout << "Muestra el tamanio actual del contenedor: " << oPerson.size() << endl;
         for (i=N_PERSONAS; i< (N_PERSONAS + masPersonas); i++)
         {
             std::cout << "Introduzca edad de la persona " << i + 1 << " :" << endl;         //!< Introduce por consola la edad de la persona
@@ -58,14 +65,23 @@ int main(void)
             oPerson[i]->saluda();
 
         //!< Destruye los objetos
-        for (i = 0; i < (MAX_PERSON + masPersonas); i++)                                    //!< Borra todas las personas
+        for (i = 0; i < oPerson.size(); i++)                                    //!< Borra todas las personas
             delete oPerson[i];
         
         //!< Por ultimo borra el contenedor para liberar memoria
         /**!    Delete[] es usado para borrar tipos array
          *      delete sin [] es para borrar punteros individuales
          */
-        delete[] oPerson;                                           
+        
+        //!< Una vez se ha realizado la eliminacion de todos los punteros, comprobamos el tamaño del vector
+        std::cout << "Ahora el tamanio del contenedor es: " << oPerson.size() << endl;  
+
+        //!< La funcion .swap es usada para cambiar los elementos de un vector a otro
+        /**! de forma que si oPerson.swap(oPerson2): los elementos, dimensiones y demas de oPerson se inter
+         * cambiarian por los de oPerson2
+         */
+        oPerson.resize(0);
+        std::cout << "Ahora el tamanio del contenedor es: " << oPerson.size() << endl;
     }
     else
     {
