@@ -1,0 +1,2 @@
+C:/projects/c++/clases/test4/build/CMakeFiles/ALL_BUILD.dir
+C:/projects/c++/clases/test4/build/CMakeFiles/ZERO_CHECK.dir

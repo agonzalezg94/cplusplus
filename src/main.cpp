@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include "../lib/Person.h"
-#include "../lib/Teacher.h"
-#include "../lib/Student.h"
+#include "Person.h"
+#include "Teacher.h"
+#include "Student.h"
 
 using namespace std;
 

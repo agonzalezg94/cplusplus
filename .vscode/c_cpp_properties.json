@@ -45,7 +45,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "C:/projects/c++/clases/test4/lib",
+                "C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++"
             ],
             "defines": [
                 "_DEBUG",
@@ -55,6 +57,7 @@
             "browse": {
                 "path": [
                     "${workspaceRoot}",
+                    "C:/projects/c++/clases/test4/lib",
                     "C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++"
                 ],
                 "limitSymbolsToIncludedHeaders": true,

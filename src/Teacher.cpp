@@ -1,6 +1,6 @@
 
-#include "../lib/Teacher.h"
-#include "../lib/Person.h"
+#include "Teacher.h"
+#include "Person.h"
 
 /**! \fn Teacher(iaEdad:int, saNombre:string).
  * \brief Es el constructor de la clase derivada \a Teacher. Este toma unas acciones singulares res

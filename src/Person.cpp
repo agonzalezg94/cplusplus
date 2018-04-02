@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../lib/Person.h"
+#include "Person.h"
 
 Person::Person()
 {
