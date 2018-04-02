@@ -15,10 +15,10 @@ class Teacher : public Person
     //!< Atributos publicos
     public:
     //!< Constructor por defecto
-    Teacher();// : Person(){};
+    Teacher();
 
     //!< Constructor definido por el nombre
-    Teacher(int iaEdad, std::string saNombre);// : Person(iaEdad, saNombre){};
+    Teacher(int iaEdad, std::string saNombre);
 
     //!< Destructor de la clase
     virtual ~Teacher();

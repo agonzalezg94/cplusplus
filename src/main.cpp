@@ -30,7 +30,7 @@ int main(void)
          *      Esto no inicializa el vector. Reserve no afecta al tamanio del vector, simplemente prepara
          *      a la memoria para este espacio reservado
          */
-        oStudent.reserve(MAX_ALUMNOS);
+        oStudent.reserve(sizeof(oStudent)*MAX_ALUMNOS);//!< Puesto que se mide en espacio es necesario aplicarle el tamanio de laocupacion
         //!< Construccion del profesor
         std::cout << "Introduce el nombre del profesor: " << endl;
         std::cin >> nombre;
@@ -75,13 +75,19 @@ int main(void)
         //!< Saluda el profesor
         oTeacher->saluda();
 
+        short nAlumnosExpul=0;
+        std::cout << "Numero de alumnos a expulsar: " << endl;
+        std::cin >> nAlumnosExpul; 
         //!< Expulsa a un alumno
-        oTeacher->expulsar(1,oStudent);
+        oTeacher->expulsar(nAlumnosExpul,oStudent);
 
         std::cout << "Main: ahora hay " << oStudent.size() << " alumnos" << endl;
         //!< Destruye los objetos
-        for (i = 0; i < oStudent.size(); i++)                                    //!< Borra todas las personas
-            delete oStudent[i];
+        for (i = 0; i < oStudent.size(); i++) {                                   //!< Borra todas las personas
+            delete oStudent.back();
+            //!< Redimensiona el vector \a oStudent para que tenga el espacio correspondiente
+            oStudent.pop_back();
+        }
         
         //!< Por ultimo borra el contenedor para liberar memoria
         /**!    Delete[] es usado para borrar tipos array

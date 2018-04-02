@@ -45,11 +45,16 @@ void Teacher::saluda()
 void Teacher::expulsar(int nAlumnos, std::vector<Student*> &orStudents)
 {
     int i;
-    std::cout << "Soy el profesor " << this->sNombre << " y voy a expulsar de mi  clase a"
+    std::cout << "Soy el profesor " << this->sNombre << " y voy a expulsar de mi  clase a "
     << nAlumnos << " alumnos" << endl;
 
-    for (i=0; i<nAlumnos; i++)
+    //!< Desocupamos el ultimo elemento del contenedor de objetos alumnos.
+    for (i=0; i<nAlumnos; i++){
+        //!< eliminamos el objeto alumno antes de desocupar el espacio correspondiente del vector
+        delete orStudents.back();
+        //!< Seguidamente desalojamos el ultimo componente de la pila del contenedor
         orStudents.pop_back();
+    }
 
     std::cout << "Profesor: bueno, ahora en la clase hay: " << orStudents.size() << " alumnos" << endl;
 }
